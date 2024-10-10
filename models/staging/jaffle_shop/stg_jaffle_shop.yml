@@ -28,3 +28,12 @@ models:
                 - returned
                 - return_pending
                 - placed
+  
+  - name: stg_stripe__payments
+    description: Staged payments data from our jaffle shop app.
+    columns:
+      - name: payment_id
+        description: Primary key for payments.
+        tests:
+          - unique
+          - not_null
