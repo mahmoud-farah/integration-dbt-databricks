@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: mart customer data from our jaffle shop app.
+    columns:
+      - name: customer_id
+        description: The primary key for customers.
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_orders
+    description: mart order data from our jaffle shop app.
+    columns:
+      - name: order_id
+        description: Primary key for orders.
+        tests:
+          - unique
+          - not_null
+      - name: amount
+        tests:
+          - average_dollars_spent_greater_than_one
+  
